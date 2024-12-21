@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta property="og:title" content="Keno Game">
+    <meta property="og:description" content="Play Keno with virtual currency! Enjoy the game with real-time features and live balance updates.">
+    <meta property="og:image" content="/assets/favicon.png">
+    <meta property="og:url" content="http://keno-a2c38.firebaseapp.com">
+    <meta property="og:type" content="website">
+    <title>Keno Game</title>
+    <link rel="stylesheet" href="keno.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+    <meta name="theme-color" content="#0f172a">
+</head>
+<body>
+    <div class="game-wrapper">
+        <div class="sidebar">
+            <div class="sidebar-top">
+                <div class="bet-panel">
+                    <div class="amount-control">
+                        <label>Bet Amount</label>
+                        <div class="amount-input">
+                            <input type="number" id="betAmount" value="1.00" step="0.01" min="0.01">
+                            <div class="amount-modifiers">
+                                <button class="modifier-btn half-btn">½</button>
+                                <button class="modifier-btn double-btn">2×</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button id="actionButton" class="action-btn">Play</button>
+                <div class="balance-display">
+                    <span class="balance-label">Balance</span>
+                    <span class="balance-amount">$100.00</span>
+                </div>
+                <div class="game-info">
+                    <div class="win-rate">
+                        <span class="win-rate-label">Win Rate</span>
+                        <span class="win-rate-value">0.0%</span>
+                    </div>
+                    <div class="total-played">
+                        <span class="total-played-label">Games Played</span>
+                        <span class="total-played-value">0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main-content">
+            <div class="keno-board"></div>
+            <div class="selected-count">Selected: <span>0</span>/10</div>
+            <div class="drawn-numbers" aria-live="polite"></div>
+        </div>
+        <div class="result-overlay">
+            <div class="result-content">
+                <div class="result-text-wrapper">
+                    <span class="result-text"></span>
+                    <span class="result-amount"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Online Players Counter -->
+    <div class="online-counter">
+        <span class="material-icons">group</span> Online Players: 
+        <span id="onlinePlayers">0</span> 
+    </div>
+
+    <!-- Firebase Configuration and Script -->
+    <script type="module" src="main.js"></script>
+</body>
+</html>
